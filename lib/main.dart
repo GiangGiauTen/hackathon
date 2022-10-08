@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_demo/constants/app_constants.dart';
 import 'package:flutter_chat_demo/providers/auth_provider.dart';
 import 'package:flutter_chat_demo/screens/chuyen_nganh.dart';
+import 'package:flutter_chat_demo/screens/lien_lac.dart';
 import 'package:flutter_chat_demo/screens/n1.dart';
 import 'package:flutter_chat_demo/screens/n2.dart';
 import 'package:flutter_chat_demo/screens/n3.dart';
@@ -138,7 +139,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => lienLac()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "Liên lạc Giảng Viên",
@@ -247,7 +251,10 @@ class MyApp extends StatelessWidget {
                 Icons.facebook,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => facebook()));
+              },
             ),
             IconButton(
               icon: Icon(
