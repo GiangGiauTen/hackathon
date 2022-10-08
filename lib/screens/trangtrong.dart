@@ -11,6 +11,9 @@ import '../models/favorite.dart';
 import '/screens/home_page.dart';
 
 class fl3 extends StatelessWidget {
+  final String deckIdu;
+
+  fl3(this.deckIdu);
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<Favorites>(
@@ -22,7 +25,7 @@ class fl3 extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         routes: {
-          HomePage.routeName: (context) => HomePage(),
+          HomePage.routeName: (context) => HomePage(deckIdu),
           FavoritesPage.routeName: (context) => FavoritesPage(),
         },
         initialRoute: HomePage.routeName,

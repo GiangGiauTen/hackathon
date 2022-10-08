@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_demo/flashcard/data_n2.dart';
 import './screens/filelist.dart';
 import './errorfinal.dart';
 import './bodyfinal.dart';
 import 'screens/trangtrong.dart';
 
 class fl2 extends StatelessWidget {
+  final String deckId;
+
+  fl2(this.deckId);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +77,7 @@ class fl2 extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => fl3()));
+                      context, MaterialPageRoute(builder: (_) => fl3(deckId)));
                 },
                 child: Center(
                   child: Text(
@@ -220,16 +224,18 @@ class fl1 extends StatelessWidget {
               mainAxisExtent: 100,
               childAspectRatio: 10),
           children: [
-            for (int i = 1; i <= 20; i++)
+            for (int i = 0; i < userDeck.length; i++)
               Container(
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => fl2()));
+                      context,
+                      MaterialPageRoute(builder: (_) => fl2(userDeck[i].id)),
+                    );
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "List $i",
+                    userDeck[i].title,
                     // ignore: prefer_const_constructors
                     style: TextStyle(fontSize: 25),
                   ),

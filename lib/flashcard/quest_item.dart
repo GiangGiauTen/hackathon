@@ -9,7 +9,9 @@ import 'data_n2.dart';
 class questItem extends StatefulWidget {
   final int currInt;
   final Flash_Card quizId;
-  questItem({required this.currInt, required this.quizId});
+  final List<Flash_Card> currDeck;
+  questItem(
+      {required this.currInt, required this.quizId, required this.currDeck});
 
   @override
   State<questItem> createState() => _questItemState();
@@ -28,12 +30,13 @@ class _questItemState extends State<questItem> {
         front: ReusableCard(
           text: Container(
             child: Text(
-              userFlashCard[widget.currInt].front,
+              widget.currDeck[widget.currInt].front,
               style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
             ),
           ),
           likeText: IconButton(
               onPressed: () {
+                print(widget.currDeck[widget.currInt].front);
                 setState(() {
                   !favoritesList.items.contains(widget.quizId)
                       ? favoritesList.add(widget.quizId)
@@ -52,13 +55,13 @@ class _questItemState extends State<questItem> {
                   ? Icon(Icons.favorite)
                   : Icon(Icons.favorite_border)),
           knowText: OutlinedButton(
-            child:
-                Container(child: Text(userFlashCard[widget.currInt].knowledge)),
+            child: Container(
+                child: Text(widget.currDeck[widget.currInt].knowledge)),
             onPressed: () {
               setState(() {
-                userFlashCard[widget.currInt].knowledge == 'Chua hoc'
-                    ? userFlashCard[widget.currInt].knowledge = 'Da hoc'
-                    : userFlashCard[widget.currInt].knowledge = 'Chua hoc';
+                widget.currDeck[widget.currInt].knowledge == 'Chua hoc'
+                    ? widget.currDeck[widget.currInt].knowledge = 'Da hoc'
+                    : widget.currDeck[widget.currInt].knowledge = 'Chua hoc';
               });
             },
           ),
@@ -72,10 +75,10 @@ class _questItemState extends State<questItem> {
                   height: 350,
                   alignment: Alignment.center,
                   child: Text(
-                    userFlashCard[widget.currInt].meaning +
+                    widget.currDeck[widget.currInt].meaning +
                         '\n' +
                         '\n' +
-                        userFlashCard[widget.currInt].hanChineseReading,
+                        widget.currDeck[widget.currInt].hanChineseReading,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 30,
@@ -105,12 +108,12 @@ class _questItemState extends State<questItem> {
                   ? Icon(Icons.favorite)
                   : Icon(Icons.favorite_border)),
           knowText: OutlinedButton(
-              child: Text(userFlashCard[widget.currInt].knowledge),
+              child: Text(widget.currDeck[widget.currInt].knowledge),
               onPressed: () {
                 setState(() {
-                  userFlashCard[widget.currInt].knowledge == 'Chua hoc'
-                      ? userFlashCard[widget.currInt].knowledge = 'Da hoc'
-                      : userFlashCard[widget.currInt].knowledge = 'Chua hoc';
+                  widget.currDeck[widget.currInt].knowledge == 'Chua hoc'
+                      ? widget.currDeck[widget.currInt].knowledge = 'Da hoc'
+                      : widget.currDeck[widget.currInt].knowledge = 'Chua hoc';
                 });
               }),
         ),
