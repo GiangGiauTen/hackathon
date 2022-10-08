@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(10.0),
                   child: LinearProgressIndicator(
                     backgroundColor: Colors.white,
-                    valueColor: AlwaysStoppedAnimation(Colors.pinkAccent),
+                    valueColor: AlwaysStoppedAnimation(Colors.blue),
                     minHeight: 5,
                     value: _initial,
                   ),
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(FontAwesomeIcons.handPointLeft, size: 30),
                     label: Text(""),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: mainColor,
+                        backgroundColor: Colors.blue,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         padding: const EdgeInsets.only(
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icon(FontAwesomeIcons.handPointRight, size: 30),
                     label: Text(""),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: mainColor,
+                        backgroundColor: Colors.blue,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)),
                         padding: EdgeInsets.only(
