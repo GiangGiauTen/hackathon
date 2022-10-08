@@ -5,7 +5,7 @@ class lienLac extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Ho tro liec lac")),
+      appBar: AppBar(title: Text("Liên lạc Giảng Viên")),
       body: Container(
         padding: EdgeInsets.all(20),
         child: GridView(
@@ -21,49 +21,77 @@ class lienLac extends StatelessWidget {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => nghiHoc()));
               },
-              child: Text('xin nghi hoc'),
+              child: Text(
+                'Xin nghỉ học',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => chuyenCan()));
               },
-              child: Text('Dieu chinh chuyen can'),
+              child: Text(
+                'Chuyên Cần',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => thanhTich()));
               },
-              child: Text('Điều chỉnh thành tích'),
+              child: Text(
+                'Thành tích',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => Khac()));
               },
-              child: Text('Vấn đề khác'),
+              child: Text(
+                'Vấn đề khác',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => danhSachLop()));
               },
-              child: Text('DANH SÁCH LỚP'),
+              child: Text(
+                'Danh sách lớp',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => taiLieu()));
               },
-              child: Text('TÀI LIỆU '),
+              child: Text(
+                'Tài liệu ',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => chuongTrinhhoc()));
               },
-              child: Text('CHƯƠNG TRÌNH HỌC'),
+              child: Text(
+                'Chương trình học',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ],
         ),
