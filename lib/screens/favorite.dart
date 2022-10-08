@@ -40,9 +40,23 @@ class FavoriteItemTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
-        title: Text(
-          ' ${itemNo.front}',
-          key: Key('favorites_text_${itemNo.id}'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(
+                  ' ${itemNo.front}',
+                  key: Key('favorites_text_${itemNo.id}'),
+                ),
+                Text('「${itemNo.hanChineseReading} 」'),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text('${itemNo.meaning}'),
+          ],
         ),
         trailing: IconButton(
           key: Key('remove_icon_${itemNo.id}'),
