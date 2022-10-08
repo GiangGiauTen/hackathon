@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_demo/constants/app_constants.dart';
 import 'package:flutter_chat_demo/providers/auth_provider.dart';
 import 'package:flutter_chat_demo/screens/chuyen_nganh.dart';
+import 'package:flutter_chat_demo/screens/lien_lac.dart';
 import 'package:flutter_chat_demo/screens/n1.dart';
 import 'package:flutter_chat_demo/screens/n2.dart';
 import 'package:flutter_chat_demo/screens/n3.dart';
@@ -138,7 +139,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => lienLac()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "Liên lạc Giảng Viên",
@@ -240,14 +244,20 @@ class MyApp extends StatelessWidget {
                 Icons.home,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
+              },
             ),
             IconButton(
               icon: Icon(
                 Icons.facebook,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => facebook()));
+              },
             ),
             IconButton(
               icon: Icon(
@@ -259,28 +269,6 @@ class MyApp extends StatelessWidget {
                     context, MaterialPageRoute(builder: (_) => schooler()));
               },
             ),
-            // PopupMenuButton(
-            //   icon: Icon(
-            //     Icons.share,
-            //     color: Colors.white,
-            //   ),
-            //   itemBuilder: (context) => [
-            //     // ignore: prefer_const_constructors
-            //     PopupMenuItem(
-            //       value: 1,
-            //       child: Text("Facebook"),
-            //     ),
-            //     // ignore: prefer_const_constructors
-            //     PopupMenuItem(
-            //       value: 2,
-            //       child: Text("Schooler"),
-            //       onTap: () {
-            //         Navigator.push(
-            //             context, MaterialPageRoute(builder: (_) => fl1()));
-            //       },
-            //     ),
-            //   ],
-            // ),
             IconButton(
               icon: Icon(
                 Icons.account_box_rounded,

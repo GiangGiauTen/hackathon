@@ -3,6 +3,9 @@ import './errorfinal.dart';
 import './bodyfinal.dart';
 import './flashcardsc.dart';
 import 'screens/trangtrong.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import './webview.dart';
+import './main.dart';
 
 class profile extends StatelessWidget {
   @override
@@ -72,32 +75,40 @@ class profile extends StatelessWidget {
                 Icons.home,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
+              },
             ),
-            PopupMenuButton(
+            IconButton(
               icon: Icon(
-                Icons.share,
+                Icons.facebook,
                 color: Colors.white,
               ),
-              itemBuilder: (context) => [
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 1,
-                  child: Text("Facebook"),
-                ),
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 2,
-                  child: Text("Schooler"),
-                ),
-              ],
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => facebook()));
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.web,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => schooler()));
+              },
             ),
             IconButton(
               icon: Icon(
                 Icons.account_box_rounded,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => profile()));
+              },
             ),
           ],
         ),
