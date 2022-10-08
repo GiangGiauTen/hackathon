@@ -81,8 +81,6 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 ElevatedButton.icon(
                     onPressed: () {
-                      print(deckCard[1].front);
-                      print(deckIu);
                       showPreviousCard();
                       updateToPrev();
                     },

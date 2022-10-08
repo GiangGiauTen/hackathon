@@ -31,12 +31,11 @@ class _questItemState extends State<questItem> {
           text: Container(
             child: Text(
               widget.currDeck[widget.currInt].front,
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold),
             ),
           ),
           likeText: IconButton(
               onPressed: () {
-                print(widget.currDeck[widget.currInt].front);
                 setState(() {
                   !favoritesList.items.contains(widget.quizId)
                       ? favoritesList.add(widget.quizId)
@@ -52,7 +51,10 @@ class _questItemState extends State<questItem> {
                 });
               },
               icon: favoritesList.items.contains(widget.quizId)
-                  ? Icon(Icons.favorite)
+                  ? Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    )
                   : Icon(Icons.favorite_border)),
           knowText: OutlinedButton(
             child: Container(
@@ -69,23 +71,50 @@ class _questItemState extends State<questItem> {
         back: ReusableCard(
           text: Container(
             height: 450,
-            child: ListView(
-              children: [
-                Container(
-                  height: 350,
-                  alignment: Alignment.center,
-                  child: Text(
-                    widget.currDeck[widget.currInt].meaning +
-                        '\n' +
-                        '\n' +
-                        widget.currDeck[widget.currInt].hanChineseReading,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 30,
+            child: SingleChildScrollView(
+              child: Container(
+                height: 350,
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    Text(
+                      widget.currDeck[widget.currInt].hiraganaReading,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
                     ),
-                  ),
+                    Text(
+                      widget.currDeck[widget.currInt].hanChineseReading,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      ),
+                    ),
+                    Text(
+                      widget.currDeck[widget.currInt].meaning,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontSize: 30,
+                      ),
+                    ),
+                    Container(
+                      height: 160,
+                      child: SingleChildScrollView(
+                        child: Text(
+                          widget.currDeck[widget.currInt].example,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
           likeText: IconButton(
@@ -105,7 +134,10 @@ class _questItemState extends State<questItem> {
                 });
               },
               icon: favoritesList.items.contains(widget.quizId)
-                  ? Icon(Icons.favorite)
+                  ? Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    )
                   : Icon(Icons.favorite_border)),
           knowText: OutlinedButton(
               child: Text(widget.currDeck[widget.currInt].knowledge),
