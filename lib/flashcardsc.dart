@@ -10,6 +10,7 @@ import 'screens/trangtrong.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import './webview.dart';
 import './main.dart';
+import './ITchuyengnganh.dart';
 
 class fl2 extends StatelessWidget {
   final String deckId;
@@ -22,7 +23,7 @@ class fl2 extends StatelessWidget {
       appBar: AppBar(
         // foregroundColor: Colors.amber,
         // backgroundColor: Colors.red,
-        title: Text('Name'),
+        title: Text('FlashCards'),
       ),
       drawer: Drawer(
         child: ElevatedButton(
@@ -34,35 +35,55 @@ class fl2 extends StatelessWidget {
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.star)),
               ElevatedButton(
+                  onPressed: () {}, child: Center(child: Text('Profile'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => profile()));
+                  },
+                  child: Center(child: Text('Đổi mật khẩu  '))),
+              ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
+                  },
+                  child: Center(child: Text('Sử thông tin cá nhân'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N5()));
+                  },
+                  child: Center(child: Text('N5'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N4()));
+                  },
+                  child: Center(child: Text('N4'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N3()));
+                  },
+                  child: Center(child: Text('N3'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N2()));
+                  },
+                  child: Center(child: Text('N2'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N1()));
+                  },
+                  child: Center(child: Text('N1'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => ITchuyennganh1()));
                   },
                   child: Center(child: Text('Tiếng Nhật chuyên ngành IT'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Nghe'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Nói'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Đọc '))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Viết'))),
             ],
           )),
         ),
@@ -178,7 +199,7 @@ class fl1 extends StatelessWidget {
       appBar: AppBar(
         // foregroundColor: Colors.amber,
         // backgroundColor: Colors.red,
-        title: Text('Name'),
+        title: Text('Danh sách FlashCards'),
       ),
       drawer: Drawer(
         child: ElevatedButton(
@@ -190,35 +211,55 @@ class fl1 extends StatelessWidget {
             children: [
               IconButton(onPressed: () {}, icon: Icon(Icons.star)),
               ElevatedButton(
+                  onPressed: () {}, child: Center(child: Text('Profile'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => profile()));
+                  },
+                  child: Center(child: Text('Đổi mật khẩu  '))),
+              ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
+                  },
+                  child: Center(child: Text('Sử thông tin cá nhân'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N5()));
+                  },
+                  child: Center(child: Text('N5'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N4()));
+                  },
+                  child: Center(child: Text('N4'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N3()));
+                  },
+                  child: Center(child: Text('N3'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N2()));
+                  },
+                  child: Center(child: Text('N2'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N1()));
+                  },
+                  child: Center(child: Text('N1'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => ITchuyennganh1()));
                   },
                   child: Center(child: Text('Tiếng Nhật chuyên ngành IT'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Nghe'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Nói'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Đọc '))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Viết'))),
             ],
           )),
         ),

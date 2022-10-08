@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_demo/ITchuyengnganh.dart';
 import 'package:flutter_chat_demo/constants/app_constants.dart';
 import 'package:flutter_chat_demo/providers/auth_provider.dart';
 import 'package:flutter_chat_demo/screens/lien_lac.dart';
@@ -21,18 +20,9 @@ import 'screens/trangtrong.dart';
 import './screens/filelist.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import './webview.dart';
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-//   SharedPreferences prefs = await SharedPreferences.getInstance();
-//   runApp(MyApp2(prefs: prefs));
-// }
+import './main.dart';
 
-void main() {
-  runApp(MaterialApp(home: MyApp()));
-}
-
-class MyApp extends StatelessWidget {
+class ITchuyennganh1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,10 +30,9 @@ class MyApp extends StatelessWidget {
       appBar: AppBar(
         // foregroundColor: Colors.amber,
         // backgroundColor: Colors.red,
-        title: Text('SUN* & STUDENT'),
+        title: Text('Từ vựng IT chuyên ngành'),
       ),
       drawer: Drawer(
-        // backgroundColor: Colors.white,
         child: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
@@ -54,58 +43,34 @@ class MyApp extends StatelessWidget {
               IconButton(onPressed: () {}, icon: Icon(Icons.star)),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => profile()));
-                  },
-                  child: Center(child: Text('Profile'))),
-              ElevatedButton(
-                  onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Đổi mật khẩu  '))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
-                  },
-                  child: Center(child: Text('Sử thông tin cá nhân'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N5()));
-                  },
-                  child: Center(child: Text('N5'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N4()));
-                  },
-                  child: Center(child: Text('N4'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N3()));
-                  },
-                  child: Center(child: Text('N3'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N2()));
-                  },
-                  child: Center(child: Text('N2'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N1()));
-                  },
-                  child: Center(child: Text('N1'))),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => ITchuyennganh1()));
                   },
                   child: Center(child: Text('Tiếng Nhật chuyên ngành IT'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
+                  },
+                  child: Center(child: Text('Nghe'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
+                  },
+                  child: Center(child: Text('Nói'))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
+                  },
+                  child: Center(child: Text('Đọc '))),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
+                  },
+                  child: Center(child: Text('Viết'))),
             ],
           )),
         ),
@@ -125,22 +90,25 @@ class MyApp extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => fl1()));
+                        context, MaterialPageRoute(builder: (_) => basic1()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
+                    "Kiến thức cơ bản về máy tính",
                     textAlign: TextAlign.center,
-                    "Falsh Card",
                     // ignore: prefer_const_constructors
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 18),
                   )),
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => basic2()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "Bài tập theo tiến độ",
+                    "Internet",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20),
                   )),
@@ -148,12 +116,12 @@ class MyApp extends StatelessWidget {
             Container(
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => ITchuyennganh1()));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => basic3()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "Tiếng Nhật chuyên ngành IT",
+                    "Network",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 18),
                   )),
@@ -162,11 +130,11 @@ class MyApp extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => lienLac()));
+                        context, MaterialPageRoute(builder: (_) => basic4()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "Liên lạc \n Giảng Viên",
+                    "Mã Hóa",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20),
                   )),
@@ -175,11 +143,11 @@ class MyApp extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N5()));
+                        context, MaterialPageRoute(builder: (_) => basic5()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "N5",
+                    "An toàn và Bảo mật",
                     textAlign: TextAlign.center,
                     // ignore: prefer_const_constructors
                     style: TextStyle(fontSize: 20),
@@ -189,11 +157,11 @@ class MyApp extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N4()));
+                        context, MaterialPageRoute(builder: (_) => basic6()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "N4",
+                    "Cấu trúc máy tính",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20),
                   )),
@@ -202,11 +170,11 @@ class MyApp extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N3()));
+                        context, MaterialPageRoute(builder: (_) => basic7()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "N3",
+                    "Cơ sở dữ liệu",
                     textAlign: TextAlign.center,
                     // ignore: prefer_const_constructors
                     style: TextStyle(fontSize: 20),
@@ -216,36 +184,11 @@ class MyApp extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N2()));
+                        context, MaterialPageRoute(builder: (_) => basic8()));
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "N2",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20),
-                  )),
-            ),
-            Container(
-              child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => N1()));
-                  },
-                  // ignore: prefer_const_constructors
-                  child: Text(
-                    "N1",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20),
-                  )),
-            ),
-            Container(
-              child: ElevatedButton(
-                  onPressed: () {
-                    main2();
-                  },
-                  // ignore: prefer_const_constructors
-                  child: Text(
-                    "Chat Box",
+                    "Hệ điều hành",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20),
                   )),
