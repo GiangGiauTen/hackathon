@@ -7,6 +7,9 @@ import './screens/filelist.dart';
 import './errorfinal.dart';
 import './bodyfinal.dart';
 import 'screens/trangtrong.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import './webview.dart';
+import './main.dart';
 
 class fl2 extends StatelessWidget {
   final String deckId;
@@ -113,7 +116,6 @@ class fl2 extends StatelessWidget {
           ],
         )),
       ),
-
       bottomNavigationBar: BottomAppBar(
         color: Colors.blue,
         // ignore: unnecessary_new
@@ -126,32 +128,40 @@ class fl2 extends StatelessWidget {
                 Icons.home,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
+              },
             ),
-            PopupMenuButton(
+            IconButton(
               icon: Icon(
-                Icons.share,
+                Icons.facebook,
                 color: Colors.white,
               ),
-              itemBuilder: (context) => [
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 1,
-                  child: Text("Facebook"),
-                ),
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 2,
-                  child: Text("Schooler"),
-                ),
-              ],
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => facebook()));
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.web,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => schooler()));
+              },
             ),
             IconButton(
               icon: Icon(
                 Icons.account_box_rounded,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => profile()));
+              },
             ),
           ],
         ),
@@ -260,37 +270,44 @@ class fl1 extends StatelessWidget {
                 Icons.home,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
+              },
             ),
-            PopupMenuButton(
+            IconButton(
               icon: Icon(
-                Icons.share,
+                Icons.facebook,
                 color: Colors.white,
               ),
-              itemBuilder: (context) => [
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 1,
-                  child: Text("Facebook"),
-                ),
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 2,
-                  child: Text("Schooler"),
-                ),
-              ],
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => facebook()));
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.web,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => schooler()));
+              },
             ),
             IconButton(
               icon: Icon(
                 Icons.account_box_rounded,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => profile()));
+              },
             ),
           ],
         ),
       ),
     );
-    ;
   }
 }
