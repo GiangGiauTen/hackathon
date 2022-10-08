@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import '../errorfinal.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import '../webview.dart';
+import '../main.dart';
+import '../bodyfinal.dart';
 
 class trangtrong2 extends StatelessWidget {
   @override
@@ -7,8 +11,6 @@ class trangtrong2 extends StatelessWidget {
     return Scaffold(
       // backgroundColor: Colors.grey,
       appBar: AppBar(
-        // foregroundColor: Colors.amber,
-        // backgroundColor: Colors.red,
         title: Text('Name'),
       ),
       drawer: Drawer(
@@ -55,20 +57,56 @@ class trangtrong2 extends StatelessWidget {
         ),
       ),
       body: Container(child: Text(' ')),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
-      ),
-
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: BottomAppBar(
         color: Colors.blue,
-        child: Container(
-          height: 60,
+        // ignore: unnecessary_new
+        child: new Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.facebook,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => facebook()));
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.web,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => schooler()));
+              },
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.account_box_rounded,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => profile()));
+              },
+            ),
+          ],
         ),
       ),
     );
-    ;
   }
 }

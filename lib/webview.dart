@@ -18,3 +18,39 @@ class schooler extends StatelessWidget {
     );
   }
 }
+
+class facebook extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'HEDSPI.K65.工科大学',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('HEDSPI.K65.工科大学'),
+        ),
+        body: WebView(
+          initialUrl: "https://www.facebook.com/groups/k65.hedspi",
+          javascriptMode: JavascriptMode.unrestricted,
+        ),
+      ),
+    );
+  }
+}
+
+class youtube1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'HEDSPI.K65.工科大学',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('HEDSPI.K65.工科大学'),
+        ),
+        body: WebView(
+          initialUrl: "https://youtube.com",
+          javascriptMode: JavascriptMode.unrestricted,
+        ),
+      ),
+    );
+  }
+}
