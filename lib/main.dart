@@ -23,7 +23,8 @@ import './bodyfinal.dart';
 import './flashcardsc.dart';
 import 'screens/trangtrong.dart';
 import './screens/filelist.dart';
-
+import 'package:webview_flutter/webview_flutter.dart';
+import './webview.dart';
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp();
@@ -241,24 +242,45 @@ class MyApp extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            PopupMenuButton(
+            IconButton(
               icon: Icon(
-                Icons.share,
+                Icons.facebook,
                 color: Colors.white,
               ),
-              itemBuilder: (context) => [
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 1,
-                  child: Text("Facebook"),
-                ),
-                // ignore: prefer_const_constructors
-                PopupMenuItem(
-                  value: 2,
-                  child: Text("Schooler"),
-                ),
-              ],
+              onPressed: () {},
             ),
+            IconButton(
+              icon: Icon(
+                Icons.web,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => schooler()));
+              },
+            ),
+            // PopupMenuButton(
+            //   icon: Icon(
+            //     Icons.share,
+            //     color: Colors.white,
+            //   ),
+            //   itemBuilder: (context) => [
+            //     // ignore: prefer_const_constructors
+            //     PopupMenuItem(
+            //       value: 1,
+            //       child: Text("Facebook"),
+            //     ),
+            //     // ignore: prefer_const_constructors
+            //     PopupMenuItem(
+            //       value: 2,
+            //       child: Text("Schooler"),
+            //       onTap: () {
+            //         Navigator.push(
+            //             context, MaterialPageRoute(builder: (_) => fl1()));
+            //       },
+            //     ),
+            //   ],
+            // ),
             IconButton(
               icon: Icon(
                 Icons.account_box_rounded,
