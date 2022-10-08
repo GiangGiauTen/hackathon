@@ -5,6 +5,12 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_demo/constants/app_constants.dart';
 import 'package:flutter_chat_demo/providers/auth_provider.dart';
+import 'package:flutter_chat_demo/screens/chuyen_nganh.dart';
+import 'package:flutter_chat_demo/screens/n1.dart';
+import 'package:flutter_chat_demo/screens/n2.dart';
+import 'package:flutter_chat_demo/screens/n3.dart';
+import 'package:flutter_chat_demo/screens/n4.dart';
+import 'package:flutter_chat_demo/screens/n5.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -108,9 +114,7 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {
-                   
-                  },
+                  onPressed: () {},
                   // ignore: prefer_const_constructors
                   child: Text(
                     "Bài tập theo tiến độ",
@@ -120,7 +124,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => chuyenNganh()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "Tiếng Nhật chuyên ngành IT",
@@ -140,7 +147,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N5()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "N5",
@@ -151,7 +161,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N4()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "N4",
@@ -161,7 +174,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N3()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "N3",
@@ -172,7 +188,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N2()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "N2",
@@ -182,7 +201,10 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => N1()));
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "N1",
@@ -193,7 +215,8 @@ class MyApp extends StatelessWidget {
             Container(
               child: ElevatedButton(
                   onPressed: () {
-                   main2();},
+                    main2();
+                  },
                   // ignore: prefer_const_constructors
                   child: Text(
                     "Chat Box",
