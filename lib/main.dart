@@ -109,7 +109,7 @@ class MyApp extends StatelessWidget {
             Container(
               child: ElevatedButton(
                   onPressed: () {
-                    main2();
+                   
                   },
                   // ignore: prefer_const_constructors
                   child: Text(
@@ -192,10 +192,11 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                   main2();},
                   // ignore: prefer_const_constructors
                   child: Text(
-                    "Chat",
+                    "Chat Box",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20),
                   )),
