@@ -10,18 +10,24 @@ import '../flashcard/data_n2.dart';
 import '../flashcard/reusable_card.dart';
 
 class HomePage extends StatefulWidget {
+  final String deckI;
+
+  HomePage(this.deckI);
   static const routeName = '/';
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(deckI);
 }
 
 class _HomePageState extends State<HomePage> {
+  final String deckIu;
+  _HomePageState(this.deckIu);
+  late final deckCard =
+      userFlashCard.where((Card) => Card.deck.contains(deckIu)).toList();
   int _currentIndexNumber = 0;
-  double _initial = 1 / userFlashCard.length;
-
+  late double _initial = 1 / deckCard.length;
   @override
   Widget build(BuildContext context) {
-    String value = (_initial * userFlashCard.length).toStringAsFixed(0);
+    String value = (_initial * deckCard.length).toStringAsFixed(0);
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
@@ -49,7 +55,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             Column(
               children: [
-                Text("Question $value of ${userFlashCard.length} Completed",
+                Text("Question $value of ${deckCard.length} Completed",
                     style: otherTextStyle),
                 SizedBox(height: 10),
                 Padding(
@@ -64,8 +70,10 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             questItem(
-                currInt: _currentIndexNumber,
-                quizId: userFlashCard[_currentIndexNumber]),
+              currInt: _currentIndexNumber,
+              quizId: deckCard[_currentIndexNumber],
+              currDeck: deckCard,
+            ),
             Text("Tab to see Answer", style: otherTextStyle),
             SizedBox(height: 10),
             Row(
@@ -73,6 +81,8 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 ElevatedButton.icon(
                     onPressed: () {
+                      print(deckCard[1].front);
+                      print(deckIu);
                       showPreviousCard();
                       updateToPrev();
                     },
@@ -107,17 +117,17 @@ class _HomePageState extends State<HomePage> {
 
   void updateToNext() {
     setState(() {
-      _initial = _initial + 1 / userFlashCard.length;
+      _initial = _initial + 1 / deckCard.length;
       if (_initial > 1.0) {
-        _initial = 1 / userFlashCard.length;
+        _initial = 1 / deckCard.length;
       }
     });
   }
 
   void updateToPrev() {
     setState(() {
-      _initial = _initial - 1 / userFlashCard.length;
-      if (_initial < 1 / userFlashCard.length) {
+      _initial = _initial - 1 / deckCard.length;
+      if (_initial < 1 / deckCard.length) {
         _initial = 1.0;
       }
     });
@@ -125,7 +135,7 @@ class _HomePageState extends State<HomePage> {
 
   void showNextCard() {
     setState(() {
-      _currentIndexNumber = (_currentIndexNumber + 1 < userFlashCard.length)
+      _currentIndexNumber = (_currentIndexNumber + 1 < deckCard.length)
           ? _currentIndexNumber + 1
           : 0;
     });
@@ -135,7 +145,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       _currentIndexNumber = (_currentIndexNumber - 1 >= 0)
           ? _currentIndexNumber - 1
-          : userFlashCard.length - 1;
+          : deckCard.length - 1;
     });
   }
 }

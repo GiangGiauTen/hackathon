@@ -6,12 +6,12 @@ List<Deck> userDeck = [
   Deck(id: '1', title: 'Unit 2'),
   Deck(id: '2', title: 'Unit 3'),
   Deck(id: '3', title: 'Unit 4'),
-  Deck(id: '4', title: 'Unit 1'),
-  Deck(id: '5', title: 'Unit 2'),
-  Deck(id: '6', title: 'Unit 3'),
-  Deck(id: '7', title: 'Unit 4'),
-  Deck(id: '8', title: 'Unit 2'),
-  Deck(id: '9', title: 'Unit 3'),
+  Deck(id: '4', title: 'Unit 5'),
+  Deck(id: '5', title: 'Unit 6'),
+  Deck(id: '6', title: 'Unit 7'),
+  Deck(id: '7', title: 'Unit 8'),
+  Deck(id: '8', title: 'Unit 9'),
+  Deck(id: '9', title: 'Unit 10'),
 ];
 
 List<Flash_Card> userFlashCard = [
@@ -123,7 +123,7 @@ List<Flash_Card> userFlashCard = [
     meaning: 'Thất vọng',
     example:
         '1)試験に落ちて、がっかりした。\nTôi thất vọng vì thi trượt.\n2)この結果にはがっかりしている*がっかりだ。\nTôi thất vọng về kết quả này.\n',
-    deck: '1',
+    deck: '0',
   ),
   Flash_Card(
     knowledge: 'Chua hoc',
@@ -134,7 +134,7 @@ List<Flash_Card> userFlashCard = [
     meaning: 'Động viên, an ủi',
     example:
         '1)受験に失敗した友人を励ました。\nTôi đã động viên đứa bạn vừa thi trượt.\n2) 皆さんの応援に励まされました。\nTôi đã được khích lệ bằng sự cổ vũ của mọi người.\n',
-    deck: '1',
+    deck: '0',
   ),
   Flash_Card(
     knowledge: 'Chua hoc',
