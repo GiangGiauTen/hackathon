@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -6,8 +8,9 @@ class N2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ElevatedButton(
-        child: Text('du ia'),
-        onPressed: () {},
+        child: Text('N2_Nihongo_Challenge_Kotoba'),
+        onPressed: () => launch(
+            'https://drive.google.com/uc?id=1GlxYVBb1xjkNR39XRKz1xXzN8dWbDUBJ&export=download'),
       ),
     );
   }
