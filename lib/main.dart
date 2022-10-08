@@ -244,7 +244,10 @@ class MyApp extends StatelessWidget {
                 Icons.home,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MyApp()));
+              },
             ),
             IconButton(
               icon: Icon(
@@ -266,28 +269,6 @@ class MyApp extends StatelessWidget {
                     context, MaterialPageRoute(builder: (_) => schooler()));
               },
             ),
-            // PopupMenuButton(
-            //   icon: Icon(
-            //     Icons.share,
-            //     color: Colors.white,
-            //   ),
-            //   itemBuilder: (context) => [
-            //     // ignore: prefer_const_constructors
-            //     PopupMenuItem(
-            //       value: 1,
-            //       child: Text("Facebook"),
-            //     ),
-            //     // ignore: prefer_const_constructors
-            //     PopupMenuItem(
-            //       value: 2,
-            //       child: Text("Schooler"),
-            //       onTap: () {
-            //         Navigator.push(
-            //             context, MaterialPageRoute(builder: (_) => fl1()));
-            //       },
-            //     ),
-            //   ],
-            // ),
             IconButton(
               icon: Icon(
                 Icons.account_box_rounded,

@@ -23,6 +23,7 @@ class facebook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       title: 'Facebook Hedspi',
       home: Scaffold(
         appBar: AppBar(
@@ -30,12 +31,14 @@ class facebook extends StatelessWidget {
         ),
         body: WebView(
           initialUrl: "https://www.facebook.com/groups/347673639804085",
+
           javascriptMode: JavascriptMode.unrestricted,
         ),
       ),
     );
   }
 }
+
 
 class nghiHoc extends StatelessWidget {
   @override
@@ -161,6 +164,7 @@ class chuongTrinhhoc extends StatelessWidget {
         body: WebView(
           initialUrl:
               "https://www.facebook.com/photo?fbid=10158364209747273&set=gm.778235080081270&idorvanity=347673639804085",
+
           javascriptMode: JavascriptMode.unrestricted,
         ),
       ),
