@@ -37,7 +37,7 @@ class _addWordScreenState extends State<addWordScreen> {
       ),
       body: Form(
         key: _formKey,
-        child: Column(
+        child: ListView(
           children: <Widget>[
             TextEntry(front: _front, textInsert: 'Chữ Hán'),
             TextEntry(front: _hiraganaReading, textInsert: 'Đọc Hiragana'),

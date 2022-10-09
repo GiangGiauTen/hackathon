@@ -8,11 +8,17 @@ import '../providers/decks.dart';
 import '../flashcard/data_n2.dart';
 
 class trangtrong2 extends StatefulWidget {
+  final String Decki;
+  trangtrong2(this.Decki);
   @override
-  State<trangtrong2> createState() => _trangtrong2State();
+  State<trangtrong2> createState() => _trangtrong2State(Decki);
 }
 
 class _trangtrong2State extends State<trangtrong2> {
+  final String deckI;
+  _trangtrong2State(this.deckI);
+  late final deckCard =
+      userFlashCard.where((Card) => Card.deck.contains(deckI)).toList();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +73,7 @@ class _trangtrong2State extends State<trangtrong2> {
       ),
       body: Container(
         child: Center(
-          child: userFlashCard.length <= 0
+          child: deckCard.length <= 0
               ? const Text('Không có từ trong deck')
               : ListView.builder(
                   itemCount: userFlashCard.length,
@@ -87,7 +93,7 @@ class _trangtrong2State extends State<trangtrong2> {
                             child: Column(
                               children: [
                                 Text(
-                                  userFlashCard[i].front,
+                                  deckCard[i].front,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     fontSize: 15,
@@ -95,28 +101,28 @@ class _trangtrong2State extends State<trangtrong2> {
                                   ),
                                 ),
                                 Text(
-                                  userFlashCard[i].hiraganaReading,
+                                  deckCard[i].hiraganaReading,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     fontSize: 20,
                                   ),
                                 ),
                                 Text(
-                                  userFlashCard[i].hanChineseReading,
+                                  deckCard[i].hanChineseReading,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     fontSize: 30,
                                   ),
                                 ),
                                 Text(
-                                  userFlashCard[i].meaning,
+                                  deckCard[i].meaning,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     fontSize: 15,
                                   ),
                                 ),
                                 Text(
-                                  userFlashCard[i].example,
+                                  deckCard[i].example,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     fontSize: 15,
