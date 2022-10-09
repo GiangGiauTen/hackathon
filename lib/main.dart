@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
                   },
-                  child: Center(child: Text('Sử thông tin cá nhân'))),
+                  child: Center(child: Text('Sửa thông tin cá nhân'))),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
