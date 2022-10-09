@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
                   },
-                  child: Center(child: Text('Sử thông tin cá nhân'))),
+                  child: Center(child: Text('Sửa thông tin cá nhân'))),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -130,7 +130,7 @@ class MyApp extends StatelessWidget {
                   // ignore: prefer_const_constructors
                   child: Text(
                     textAlign: TextAlign.center,
-                    "Falsh Card",
+                    "Flash Card",
                     // ignore: prefer_const_constructors
                     style: TextStyle(fontSize: 20),
                   )),
