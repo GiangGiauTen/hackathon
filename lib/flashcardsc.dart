@@ -119,7 +119,7 @@ class fl2 extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => trangtrong2()));
+                        MaterialPageRoute(builder: (_) => trangtrong2(deckId)));
                   },
                   child: Container(
                     child: Center(
