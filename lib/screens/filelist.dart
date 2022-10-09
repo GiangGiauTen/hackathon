@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../errorfinal.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-import '../webview.dart';
-import '../main.dart';
-import '../bodyfinal.dart';
 
-class trangtrong2 extends StatelessWidget {
+import '../providers/decks.dart';
+import './AddWordScreem.dart';
+import '../providers/decks.dart';
+import '../flashcard/data_n2.dart';
+
+class trangtrong2 extends StatefulWidget {
+  @override
+  State<trangtrong2> createState() => _trangtrong2State();
+}
+
+class _trangtrong2State extends State<trangtrong2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Colors.grey,
       appBar: AppBar(
-        title: Text('Name'),
+        // foregroundColor: Colors.amber,
+        // backgroundColor: Colors.red,
+        title: Text('Danh sách từ vựng'),
       ),
       drawer: Drawer(
         child: ElevatedButton(
@@ -51,62 +60,101 @@ class trangtrong2 extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AppChuaPhatTrien()));
                   },
-                  child: Center(child: Text('Viết'))),
+                  child: MaterialApp(title: 'Viết')),
             ],
           )),
         ),
       ),
-      body: Container(child: Text(' ')),
+      body: Container(
+        child: Center(
+          child: userFlashCard.length <= 0
+              ? const Text('Không có từ trong deck')
+              : ListView.builder(
+                  itemCount: userFlashCard.length,
+                  itemBuilder: (ctx, i) => ListTile(
+                    title: Column(
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.ideographic,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(15),
+                          width: double.infinity,
+                          child: Card(
+                            color: Color.fromARGB(255, 243, 240, 240),
+                            shadowColor: Color.fromARGB(117, 243, 240, 240),
+                            surfaceTintColor:
+                                Color.fromARGB(255, 226, 202, 135),
+                            child: Column(
+                              children: [
+                                Text(
+                                  userFlashCard[i].front,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                                Text(
+                                  userFlashCard[i].hiraganaReading,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                Text(
+                                  userFlashCard[i].hanChineseReading,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                  ),
+                                ),
+                                Text(
+                                  userFlashCard[i].meaning,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                  ),
+                                ),
+                                Text(
+                                  userFlashCard[i].example,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    color: Color.fromARGB(255, 130, 131, 126),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    onTap: (() {
+                      // Detail Page
+                    }),
+                  ),
+                ),
+        ),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => addWordScreen()))
+              .then((value) => setState(() {}));
+          ;
+        },
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+
       bottomNavigationBar: BottomAppBar(
         color: Colors.blue,
-        // ignore: unnecessary_new
-        child: new Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MyApp()));
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.facebook,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => facebook()));
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.web,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => schooler()));
-              },
-            ),
-            IconButton(
-              icon: Icon(
-                Icons.account_box_rounded,
-                color: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => profile()));
-              },
-            ),
-          ],
+        child: Container(
+          height: 60,
         ),
       ),
     );
+    ;
   }
 }

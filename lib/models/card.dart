@@ -11,7 +11,7 @@ class Flash_Card {
   String example;
 
   Flash_Card({
-    required this.knowledge,
+    this.knowledge = "Chua hoc",
     required this.id,
     required this.deck,
     required this.front,
