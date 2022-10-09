@@ -130,7 +130,7 @@ class MyApp extends StatelessWidget {
                   // ignore: prefer_const_constructors
                   child: Text(
                     textAlign: TextAlign.center,
-                    "Falsh Card",
+                    "Flash Card",
                     // ignore: prefer_const_constructors
                     style: TextStyle(fontSize: 20),
                   )),
